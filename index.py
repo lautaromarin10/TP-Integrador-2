@@ -1,5 +1,5 @@
-def verificar_dni(dni):
-    return True if len(str(dni)) == 8 else False
+def verificar_dni(dni: int):
+    return len(str(dni)) == 8
 
 
 def solicitar_DNI():
@@ -8,7 +8,7 @@ def solicitar_DNI():
     lista_dni = []
 
     if cantidad < 0:
-        print("La cantidad no puede ser negativa, vuelve a intentarlo nuevamente\n")
+        print("La cantidad no puede ser negativa ni cero, vuelve a intentarlo nuevamente\n")
         solicitar_DNI()
 
     for i in range(cantidad):
@@ -22,5 +22,22 @@ def solicitar_DNI():
 
     return lista_dni
 
+def conjunto_sin_repetidos(conjunto: list):
 
-print(solicitar_DNI())
+    conjunto_sin_repetidos = []
+
+    for numero in conjunto:
+        if not numero in conjunto_sin_repetidos:
+            conjunto_sin_repetidos.append(numero)
+
+    return conjunto_sin_repetidos
+
+def generar_conjuntos_con_digitos_unicos(conjuntos: list):
+
+    conjunto_digitos_unicos = []
+
+    if conjuntos:
+        for conjunto in conjuntos:
+            conjunto_digitos_unicos.append(conjunto_sin_repetidos(conjunto))
+
+    return conjunto_digitos_unicos
