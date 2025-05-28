@@ -1,6 +1,4 @@
-def verificar_dni(dni: int):
-    return len(str(dni)) == 8
-
+from utilidades import verificar_dni
 
 def solicitar_DNI():
 
