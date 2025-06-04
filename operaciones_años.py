@@ -1,4 +1,4 @@
-from utilidades import *
+from utilidades import verificar_año, es_año_par, año_mayor_a_2000,es_año_bisiesto, generar_edades, producto_cartesiano_por_edades
 
 def solicitar_años():
 
