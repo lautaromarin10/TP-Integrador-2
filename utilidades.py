@@ -1,16 +1,15 @@
-
-
 # Utilidades para operaciones_con_dni
 def conjunto_sin_repetidos(conjunto: list):
-
-    conjunto_sin_repetidos = []
-
+    digitos_sin_repetir = []
+    
     for numero in conjunto:
-        if not numero in conjunto_sin_repetidos:
-            conjunto_sin_repetidos.append(numero)
-
-    return conjunto_sin_repetidos
-
+        # Convertir el número a string y luego cada dígito de vuelta a int
+        digitos = [int(digito) for digito in str(numero)]
+        for d in digitos:
+            if d not in digitos_sin_repetir:
+                digitos_sin_repetir.append(d)
+                
+    return digitos_sin_repetir
 
 # Utilidades
 def verificar_dni(dni: int):
@@ -73,22 +72,34 @@ def producto_cartesiano_por_edades(año, edades):
         producto.append([año, edad])
     return producto
 
-
 def union_conjuntos(conjunto1: list, conjunto2: list):
     """Devuelve la unión de dos conjuntos (todos los elementos de ambos)"""
-    return list(set(conjunto1) | set(conjunto2))
-
+    union = list(set(conjunto1) | set(conjunto2))
+    print(f"Union entre el conjunto {conjunto1} y el conjunto {conjunto2}: {union}")
+    return union
 
 def interseccion_conjuntos(conjunto1: list, conjunto2: list):
     """Devuelve los elementos comunes entre dos conjuntos"""
-    return list(set(conjunto1) & set(conjunto2))
-
+    interseccion = list(set(conjunto1) & set(conjunto2))
+    print(f"Interseccion entre el conjunto {conjunto1} y el conjunto {conjunto2}: {interseccion}")
+    return interseccion
 
 def diferencia_conjuntos(conjunto1: list, conjunto2: list):
     """Devuelve los elementos que están en conjunto1 pero no en conjunto2"""
-    return list(set(conjunto1) - set(conjunto2))
-
+    diferencia =  list(set(conjunto1) - set(conjunto2))
+    print(f"Diferencia entre el conjunto {conjunto1} y el conjunto {conjunto2}: {diferencia}")
 
 def diferencia_simetrica_conjuntos(conjunto1: list, conjunto2: list):
     """Devuelve los elementos que están en un conjunto pero no en ambos"""
-    return list(set(conjunto1) ^ set(conjunto2))
+    diferencia = list(set(conjunto1) ^ set(conjunto2))
+    print(f"Diferencia simetrica entre el conjunto {conjunto1} y el conjunto {conjunto2}: {diferencia}")
+
+def unificacion_conjuntos(conjuntos):
+
+    conjunto1 = conjuntos[0]
+    conjunto2 = conjuntos[1]
+
+    union_conjuntos(conjunto1, conjunto2)
+    interseccion_conjuntos(conjunto1, conjunto2)
+    diferencia_conjuntos(conjunto1, conjunto2)
+    diferencia_simetrica_conjuntos(conjunto1, conjunto2)
