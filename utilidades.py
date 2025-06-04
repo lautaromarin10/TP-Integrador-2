@@ -1,3 +1,5 @@
+
+
 # Utilidades para operaciones_con_dni
 def conjunto_sin_repetidos(conjunto: list):
 
@@ -14,6 +16,26 @@ def conjunto_sin_repetidos(conjunto: list):
 def verificar_dni(dni: int):
     return len(str(dni)) == 8
 
+def solicitar_DNI():
+
+    cantidad = int(input("Ingrese la cantidad de DNIs a solicitar\n"))
+    lista_dni = []
+
+    if cantidad < 0:
+        print("La cantidad no puede ser negativa ni cero, vuelve a intentarlo nuevamente\n")
+        solicitar_DNI()
+
+    for i in range(cantidad):
+        dni = int(input(f"Ingrese el {i + 1} DNI\n"))
+
+        while(not verificar_dni(dni)):
+            print("El DNI igresado no cuenta con el largo permitido (8). Por favor intentalo nuevamente\n")
+            dni = int(input(f"Ingrese el {i + 1} DNI\n"))
+
+        lista_dni.append(dni)
+
+    return [lista_dni]
+
 
 def verificar_año(año: int):
     return len(str(año)) == 4
@@ -22,6 +44,10 @@ def verificar_año(año: int):
 def es_año_par(año: int):
     return año % 2 == 0
 
+def uno_si(condicion):
+    #Retorna verdadero en caso de que la condicion sea verdadera
+    #Integer
+    return 1 if condicion else 0
 
 def año_mayor_a_2000(año: int):
     return año > 2000
