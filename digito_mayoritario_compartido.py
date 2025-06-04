@@ -1,4 +1,4 @@
-from utilidades import solicitar_DNI, uno_si
+from utilidades import solicitar_DNI, uno_si, conjunto_sin_repetidos
 #Condición de Dígito Mayoritario Compartido
 
 def conjuntos_con_minimo_5_elementos(conjuntos):
@@ -34,7 +34,7 @@ def condicion_mayoritario_compartido(conjuntos):
 
 def integrador_digito_mayoritario():
     conjuntos_dni = solicitar_DNI()
-    print(conjuntos_dni)
     conjuntos_con_minimo_5_elementos(conjuntos_dni)
     existe_digito_en_minimo_tres_conjuntos(conjuntos_dni)
     condicion_mayoritario_compartido(conjuntos_dni)
+

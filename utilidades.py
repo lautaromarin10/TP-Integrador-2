@@ -97,7 +97,12 @@ def diferencia_simetrica_conjuntos(conjunto1: list, conjunto2: list):
 def unificacion_conjuntos(conjuntos):
 
     conjunto1 = conjuntos[0]
-    conjunto2 = conjuntos[1]
+    
+    if len(conjuntos) >= 2:
+        conjunto2 = conjuntos[1]
+    else:
+        print("No existe un segundo DNI para hacer operaciones entre conjuntos")
+        return
 
     union_conjuntos(conjunto1, conjunto2)
     interseccion_conjuntos(conjunto1, conjunto2)

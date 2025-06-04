@@ -60,3 +60,5 @@ def integrador_operaciones_años():
     son_gen_z(lista_años)
     hay_año_especial(lista_años)
     producto_cartesiano(lista_años)
+
+integrador_operaciones_años()
