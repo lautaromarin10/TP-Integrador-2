@@ -38,8 +38,8 @@ def solicitar_DNI():
     cantidad = int(input("Ingrese la cantidad de DNIs a solicitar\n"))
     lista_dni = []
 
-    if cantidad < 0:
-        print("La cantidad no puede ser negativa ni cero, vuelve a intentarlo nuevamente\n")
+    if cantidad < 1:
+        print("La cantidad no puede ser menor a 1, vuelve a intentarlo nuevamente\n")
         solicitar_DNI()
 
     for i in range(cantidad):
